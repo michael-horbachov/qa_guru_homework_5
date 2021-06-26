@@ -11,3 +11,10 @@
 1. Взять свой код для [automation-practice-form] https://demoqa.com/automation-practice-form
 2. Добавить аттачи для Allure – скриншот, page source, console.log и видео
 3. Cделать сборку в Jenkins
+
+## QA GURU: homework #10
+
+### Задание
+1. Доработать свой код:
+   * Передать из Jenkins адрес удаленного браузера
+   * Спрятать логин/пароль к удаленному браузеру в .properties файл, считывать его нужно в коде с owner

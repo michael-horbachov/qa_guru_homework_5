@@ -15,8 +15,9 @@ dependencies {
     testImplementation(
             "com.codeborne:selenide:$selenideVersion",
             "org.junit.jupiter:junit-jupiter-api:$junitVersion",
+            "io.qameta.allure:allure-selenide:$allureVersion",
             "com.github.javafaker:javafaker:1.0.2",
-            "io.qameta.allure:allure-selenide:$allureVersion"
+            "org.aeonbits.owner:owner:1.0.12"
     )
     testRuntimeOnly(
             "org.slf4j:slf4j-simple:1.7.30",
@@ -36,7 +37,14 @@ allure {
     }
 }
 
+tasks.withType(JavaCompile) {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
 tasks.withType(Test) {
+    systemProperties(System.getProperties())
+
     useJUnitPlatform()
 
     testLogging {
